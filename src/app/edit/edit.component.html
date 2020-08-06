@@ -1,0 +1,35 @@
+<div class="container">
+  <form [formGroup]="profileForm">
+    <label>
+      First Name:
+      <input type="text" formControlName="firstName" />
+    </label>
+
+    <label>
+      Last Name:
+      <input type="text" formControlName="lastName" />
+    </label>
+    <label>
+      Email:
+      <input type="text" formControlName="email" />
+    </label>
+    <button
+      *ngIf="updateUser"
+      class="btn btn-primary"
+      type="button"
+      [disabled]="profileForm.status !== 'VALID'"
+      (click)="onUpdateUser()"
+    >
+      Update User
+    </button>
+    <button
+      *ngIf="addUser"
+      class="btn btn-success"
+      type="button"
+      [disabled]="profileForm.status !== 'VALID'"
+      (click)="onAddUser()"
+    >
+      Add User
+    </button>
+  </form>
+</div>

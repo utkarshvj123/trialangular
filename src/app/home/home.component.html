@@ -1,0 +1,38 @@
+<button class="btn btn-primary" routerLink="/add">Add</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">SNo.</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+      <th scope="col">Delete</th>
+      <th scope="col">Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of userList; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ data.firstName }}</td>
+      <td>{{ data.lastName }}</td>
+      <td>{{ data.email }}</td>
+      <td>
+        <button
+          class="btn btn-danger"
+          (click)="gettingValueFromTbl(data, 'delete')"
+        >
+          delete
+        </button>
+      </td>
+      <td>
+        <button
+          class="btn btn-primary"
+          (click)="gettingValueFromTbl(data, 'edit')"
+        >
+          edit
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
